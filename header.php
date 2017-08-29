@@ -45,7 +45,7 @@
             
               <!-- Menu Footer-->
               <li class="user-footer">         
-                  <a href="#" >Sign out</a>        
+                  <a href="services/logout.php" >Sign out</a>        
               </li>
             </ul>
           </li>
