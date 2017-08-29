@@ -1,6 +1,7 @@
 
 <?php 
 require_once("config.php");
+session_start();
 
 $name		= $_REQUEST["name"];
 $fname		= $_REQUEST["fatherName"];
@@ -15,9 +16,11 @@ try {
 	$insert = "UPDATE students SET name = '$name', f_name = '$fname', reg_number = '$registration', email = '$email', nic = '$nic', phone = '$phone', updated_at = '$updated' WHERE id = '$id' ";
 	if(mysqli_query($dbc, $insert))
 	{
-		header("Location: /studentProtel/?msg=Record updated successfully...");
+		$_SESSION["msg"] = "Record Updated successfully...";
+		header("Location: /studentPortel/");
 	} else { 
-		header("Location: /studentProtel/?error=".mysqli_error($dbc));
+		$_SESSION["error"] = " ".mysqli_error($dbc);
+		header("Location: /studentPortel/".mysqli_error($dbc));
 	}
 }
 //catch exception

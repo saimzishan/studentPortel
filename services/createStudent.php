@@ -1,5 +1,6 @@
 <?php 
 require_once("config.php");
+session_start();
 
 $name		= $_REQUEST["name"];
 $fname		= $_REQUEST["fatherName"];
@@ -13,9 +14,11 @@ try {
 	$insert = "INSERT INTO students (name, f_name, reg_number, email, nic, phone , created_at) VALUES ('$name', '$fname', '$registration', '$email', '$nic', '$phone' , '$created_at' )";
 	if(mysqli_query($dbc, $insert))
 	{
-		header("Location: /studentProtel/?msg=Record save successfully...");
+		$_SESSION["msg"] = "Record Created successfully...";
+		header("Location: /studentPortel/");
 	} else {
-		header("Location: /studentProtel/?error=Somethig went wronge...");
+		$_SESSION["error"] = " ".mysqli_error($dbc);
+		header("Location: /studentPortel/".mysqli_error($dbc));
 	}
 }
 //catch exception

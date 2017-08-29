@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -26,14 +28,20 @@
                      <!-- Message to save records -->
                     <div calss="mesg" style="  color:#478C61; float:right; width:50%;">
                         <?php  
-                          if( isset($_GET['msg']) )
-                          echo $_GET['msg'];
+                          if(isset($_SESSION['msg'])) 
+                          {
+                            echo $_SESSION['msg'];
+                            unset($_SESSION['msg']);
+                          }
                         ?>
                       </div> <!-- message end   -->
                        <div calss="mesg" style="  color:red; float:right; width:50%;">
                         <?php  
-                          if( isset($_GET['error']) )
-                          echo $_GET['error'];
+                          if(isset($_SESSION['error'])) 
+                          {
+                            echo $_SESSION['error'];
+                            unset($_SESSION['error']);
+                          }
                         ?>
                       </div> <!-- message end   -->
                   </div>

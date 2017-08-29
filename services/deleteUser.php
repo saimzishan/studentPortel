@@ -1,14 +1,18 @@
 <?php 
 require_once("config.php");
+session_start();
 
 if( isset($_GET['del']) ) {
 	$userId = $_GET['del'];
 	$delUser = "DELETE FROM students where id=".$userId;
 	//$updateUser = "UPDATE students set firstname='".$firstname."', lastname='".$lastname."', type='".$type."', active='".$active."', created_at='".date("Y-m-d H:i:s")."' WHERE id=".$userId;
 	$rs = mysqli_query($dbc, $delUser);
-	if($rs) {header("Location: /studentPortel/?msg=Record Deleted successfully...");
+	if($rs) {
+		$_SESSION["msg"] = "Record Deleted successfully...";
+		header("Location: /studentPortel/");
 	} else {
-		header("Location: /studentPortel/?error=".mysqli_error($dbc));
+		$_SESSION["error"] = " ".mysqli_error($dbc);
+		header("Location: /studentPortel/".mysqli_error($dbc));
 	}
 
 } else {
