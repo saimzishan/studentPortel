@@ -6,6 +6,6 @@ $name		= $_REQUEST["u"];
 $p		= $_REQUEST["p"];
 
 $_SESSION["name"] = $name;
-header("Location: /studentPortel/");
+header("Location: /studentPortel/dashBoard.php");
 
 ?>

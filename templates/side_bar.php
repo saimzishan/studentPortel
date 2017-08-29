@@ -21,10 +21,17 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-      <?php $curntPage =  curPageName(); if($curntPage == "index.php") { ?>
+      <?php $curntPage =  curPageName(); if($curntPage == "dashBoard.php") { ?>
         <li class="treeview active"> <?php
         } else{?>  <li class="treeview"> <?php }  ?>
-          <a href="./">
+          <a href="./dashBoard.php">
+            <i class="fa fa-tachometer"></i> <span>Dash Board</span>
+          </a>
+        </li>
+        <?php $curntPage =  curPageName(); if($curntPage == "index.php") { ?>
+        <li class="treeview active"> <?php
+        } else{?>  <li class="treeview"> <?php }  ?>
+          <a href="./index.php">
             <i class="fa fa-users"></i> <span>Students</span>
           </a>
         </li>
