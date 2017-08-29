@@ -1,0 +1,8 @@
+@media (max-width: 767px){
+		 .main-sidebar {
+	    -webkit-transform: translate(0, 0);
+	}
+	.content { 
+		margin-left: 225px;
+	}
+}

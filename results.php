@@ -1,19 +1,12 @@
-<?php
-	// get database connection 
-	require_once("services/config.php");
-
-?>
   <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Student| Dashboard</title>
-  
+  <title>Students portel| Results</title>
   <?php include('header.php');?>
 <body class="hold-transition skin-blue sidebar-mini">
-
-<?php include('students/index.php');?>
+<?php include('results/index.php');?>
 <!-- ./wrapper -->
 <?php include('end.php');?>
 
