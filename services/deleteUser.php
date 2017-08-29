@@ -1,12 +1,10 @@
 <?php 
 require_once("config.php");
-$userId = $_REQUEST["userId"];
 
-
-if(!empty($userId)) {
-
-	$delUser = "DELETE FROM users where id=".$userId;
-	//$updateUser = "UPDATE users set firstname='".$firstname."', lastname='".$lastname."', type='".$type."', active='".$active."', created_at='".date("Y-m-d H:i:s")."' WHERE id=".$userId;
+if( isset($_GET['del']) ) {
+	$userId = $_GET['del'];
+	$delUser = "DELETE FROM students where id=".$userId;
+	//$updateUser = "UPDATE students set firstname='".$firstname."', lastname='".$lastname."', type='".$type."', active='".$active."', created_at='".date("Y-m-d H:i:s")."' WHERE id=".$userId;
 	$rs = mysqli_query($conn, $delUser);
 	$resp = array("success" => "1", "msg" => "User Deleted Successfully.");
 	echo json_encode( $resp );

@@ -78,12 +78,12 @@
                                     <td id="stu_phone"><?php echo $row['phone'];?></td>
                                     <td>
                                       
-                                      <button type="button" class="editBtn" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                      <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
                                         Edit
                                       </button> |
                                       
-                                      <a href="test.php?del=<?php echo$row['id'];?>">
-                                        <button type="button" class="btn btn-small btn-xs btn-danger">Delete</button>
+                                      <a href="services/deleteUser.php?del=<?php echo$row['id'];?>">
+                                        <button type="button" class="btn btn-small btn-xs btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
                                       </a>
                                     </td>
                                   </tr>
@@ -243,6 +243,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
     $(document).on("click", ".editBtn", function(){
