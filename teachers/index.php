@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -13,44 +16,44 @@
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
-        <section  class="col-lg-12 col-md-12">
+        <section class="col-lg-12 col-md-12">
 
           <!-- Chat box -->
           <div class="box box-success">
             <div class="box-header">
-              <i class="fa fa-user-secret"></i>
+              <i class="fa fa-users"></i>
 
-              <h3 class="box-title">Teachers</h3>
-              <div class="col-sm-12">
+              <h3 class="box-title">Students</h3>
+                 <div class="col-sm-12">
                      <!-- Message to save records -->
-                  <div calss="mesg" style="  color:#478C61; float:right; width:50%;">
-                      <?php  
-                        if(isset($_SESSION['msg'])) 
-                        {
-                          echo $_SESSION['msg'];
-                          unset($_SESSION['msg']);
-                        }
-                      ?>
-                    </div> <!-- message end   -->
-                     <div calss="mesg" style="  color:red; float:right; width:50%;">
-                      <?php  
-                        if(isset($_SESSION['error'])) 
-                        {
-                          echo $_SESSION['error'];
-                          unset($_SESSION['error']);
-                        }
-                      ?>
-                    </div> <!-- message end   -->
-                     <div class="col-md-2" style="float: right;">
-                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addTeacher" data-backdrop="static" data-keyboard="false">Add new Teacher</button>
+                    <div calss="mesg" style="  color:#478C61; float:right; width:50%;">
+                        <?php  
+                          if(isset($_SESSION['msg'])) 
+                          {
+                            echo $_SESSION['msg'];
+                            unset($_SESSION['msg']);
+                          }
+                        ?>
+                      </div> <!-- message end   -->
+                       <div calss="mesg" style="  color:red; float:right; width:50%;">
+                        <?php  
+                          if(isset($_SESSION['error'])) 
+                          {
+                            echo $_SESSION['error'];
+                            unset($_SESSION['error']);
+                          }
+                        ?>
+                      </div> <!-- message end   -->
+                  </div>
+              <div class="col-md-2" style="float: right;">
+                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addStudent" data-backdrop="static" data-keyboard="false">Add new student</button>
               </div> 
-                </div>
             </div>
             <div class="box-body chat" id="chat-box">
-              <!-- chat item -->
-               <div class="item">  
+              <!-- chat item -->  
+              <div class="item">  
                   <?php  
-                    $q = "SELECT * FROM teachers ";
+                    $q = "SELECT * FROM teachers";
                     $r = mysqli_query($dbc,$q);
 
                     if (mysqli_num_rows($r) <= 0) {
@@ -107,24 +110,23 @@
           <!-- /.box (chat box) -->
 
         </section>
-        <!-- /.Left col -->
-        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+      
         <section class="col-lg-5 connectedSortable">
         <!-- Add Modal -->
-          <div id="addTeacher" class="modal fade" role="dialog">
+          <div id="addStudent" class="modal fade" role="dialog">
               <div class="modal-dialog">
                   <!-- Modal content-->
                   <div class="modal-content border-radius">
                       <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                           
-                          <h4 class="modal-title">Add New Teacher</h4>
+                          <h4 class="modal-title">Add New Student</h4>
                       </div>
                       <div class="modal-body">
                           <form action="services/createStudent.php" method="POST" class="form-horizontal" enctype="multipart/form-data">
                           
                               <div class="form-group">
-                                  <label class="control-label col-sm-4" for="student_name">Name:</label>
+                                  <label class="control-label col-sm-4" for="student_name">Student Name:</label>
                                   <div class="col-sm-8">
                                       <input type="text" class="form-control" name="name" placeholder="Student name" required>
                                   </div>
@@ -175,7 +177,7 @@
 
 
           <!-- Add Modal -->
-          <div id="editTeacher" class="modal fade" role="dialog">
+          <div id="editStudent" class="modal fade" role="dialog">
               <div class="modal-dialog">
                   <!-- Modal content-->
                   <div class="modal-content border-radius">
@@ -249,3 +251,17 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(document).on("click", ".editBtn", function(){
+      $("#editStudent").modal('show');
+      $("#textBox1").val($(this).attr('data-name'));
+      $("#textBox2").val($(this).attr('data-f_name'));
+      $("#textBox3").val($(this).attr('data-email'));
+      $("#textBox4").val($(this).attr('data-reg_number'));
+      $("#textBox5").val($(this).attr('data-nic'));
+      $("#textBox6").val($(this).attr('data-phone'));
+    });
+  });
+</script>
