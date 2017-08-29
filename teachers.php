@@ -1,4 +1,13 @@
-  <!DOCTYPE html>
+ <?php
+	session_start();
+	// get database connection 
+	require_once("services/config.php");
+	 if(!isset($_SESSION['name'])) 
+	 {
+	 	header("Location: /studentPortel/login.php");
+	 }
+?>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
