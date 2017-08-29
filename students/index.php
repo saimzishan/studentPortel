@@ -251,7 +251,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/studentPortel/assets/plugins/jquery/jquery-2.2.3.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
     $(document).on("click", ".editBtn", function(){
