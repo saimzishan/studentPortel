@@ -11,8 +11,6 @@
 
 <!-- AdminLTE App -->
 <script src="assets/dist/js/app.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
