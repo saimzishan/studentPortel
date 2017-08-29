@@ -21,7 +21,7 @@
           <!-- Chat box -->
           <div class="box box-success">
             <div class="box-header">
-              <i class="fa fa-users"></i>
+              <i class="fa fa-user-secret"></i>
 
               <h3 class="box-title">Students</h3>
                  <div class="col-sm-12">
@@ -120,15 +120,15 @@
                       <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                           
-                          <h4 class="modal-title">Add New Student</h4>
+                          <h4 class="modal-title">Add New Teacher</h4>
                       </div>
                       <div class="modal-body">
                           <form action="services/createStudent.php" method="POST" class="form-horizontal" enctype="multipart/form-data">
                           
                               <div class="form-group">
-                                  <label class="control-label col-sm-4" for="student_name">Student Name:</label>
+                                  <label class="control-label col-sm-4" for="student_name"> Name:</label>
                                   <div class="col-sm-8">
-                                      <input type="text" class="form-control" name="name" placeholder="Student name" required>
+                                      <input type="text" class="form-control" name="name" placeholder="Name" required>
                                   </div>
                               </div>
                               <div class="form-group">
@@ -177,22 +177,22 @@
 
 
           <!-- Add Modal -->
-          <div id="editStudent" class="modal fade" role="dialog">
+          <div id="editTeacher" class="modal fade" role="dialog">
               <div class="modal-dialog">
                   <!-- Modal content-->
                   <div class="modal-content border-radius">
                       <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                           
-                          <h4 class="modal-title" ng-if="!newData.id">Update Student</h4>
+                          <h4 class="modal-title" ng-if="!newData.id">Update Teacher</h4>
                       </div>
                       <div class="modal-body">
                           <form action="services/updateStudent.php" method="POST" class="form-horizontal" enctype="multipart/form-data">
                               <input type="hidden" name="id" id="id" />
                               <div class="form-group">
-                                  <label class="control-label col-sm-4" for="student_name">Student Name:</label>
+                                  <label class="control-label col-sm-4" for="student_name"> Name:</label>
                                   <div class="col-sm-8">
-                                      <input type="text" class="form-control" name="name" id="textBox1"  placeholder="Student name" required>
+                                      <input type="text" class="form-control" name="name" id="textBox1"  placeholder="Name" required>
                                   </div>
                               </div>
                               <div class="form-group">
@@ -255,7 +255,7 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $(document).on("click", ".editBtn", function(){
-      $("#editStudent").modal('show');
+      $("#editTeacher").modal('show');
       $("#textBox1").val($(this).attr('data-name'));
       $("#textBox2").val($(this).attr('data-f_name'));
       $("#textBox3").val($(this).attr('data-email'));
