@@ -46,7 +46,7 @@
                       </div> <!-- message end   -->
                   </div>
               <div class="col-md-2" style="float: right;">
-                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addStudent" data-backdrop="static" data-keyboard="false">Add new student</button>
+                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addTeacher" data-backdrop="static" data-keyboard="false">Add new Teacher</button>
               </div> 
             </div>
             <div class="box-body chat" id="chat-box">
@@ -113,7 +113,7 @@
       
         <section class="col-lg-5 connectedSortable">
         <!-- Add Modal -->
-          <div id="addStudent" class="modal fade" role="dialog">
+          <div id="addTeacher" class="modal fade" role="dialog">
               <div class="modal-dialog">
                   <!-- Modal content-->
                   <div class="modal-content border-radius">
