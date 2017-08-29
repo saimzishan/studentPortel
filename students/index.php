@@ -78,7 +78,9 @@
                                     <td id="stu_phone"><?php echo $row['phone'];?></td>
                                     <td>
                                       
-                                      <button value="<?php echo$row['id'];?>" type="button" onclick="doAction(this.value)" class="btn btn-warning btn-small btn-xs" data-toggle="modal" data-target="#editStudent" data-backdrop="static" data-keyboard="false">Edit</button> |
+                                      <button type="button" class="editBtn" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                        Edit
+                                      </button> |
                                       
                                       <a href="test.php?del=<?php echo$row['id'];?>">
                                         <button type="button" class="btn btn-small btn-xs btn-danger">Delete</button>
@@ -241,25 +243,16 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
 <script type="text/javascript">
- function doAction(value)
-  {
-   var name = document.getElementById('stu_name').innerHTML;
-   var f_name = document.getElementById('stu_fname').innerHTML;
-   var email = document.getElementById('stu_email').innerHTML;
-   var reg_number = document.getElementById('stu_regNumber').innerHTML;
-   var nic = document.getElementById('stu_nic').innerHTML;
-   var phone = document.getElementById('stu_phone').innerHTML;
-
-   document.getElementById('textBox1').value = name;
-   document.getElementById('textBox2').value = f_name;
-   document.getElementById('textBox3').value = email;
-   document.getElementById('textBox4').value = reg_number;
-   document.getElementById('textBox5').value = nic;
-   document.getElementById('textBox6').value = phone;
-
-
-   document.getElementById('id').value = value;
-  }
+  $(document).ready(function(){
+    $(document).on("click", ".editBtn", function(){
+      $("#editStudent").modal('show');
+      $("#textBox1").val($(this).attr('data-name'));
+      $("#textBox2").val($(this).attr('data-f_name'));
+      $("#textBox3").val($(this).attr('data-email'));
+      $("#textBox4").val($(this).attr('data-reg_number'));
+      $("#textBox5").val($(this).attr('data-nic'));
+      $("#textBox6").val($(this).attr('data-phone'));
+    });
+  });
 </script>
