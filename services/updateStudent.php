@@ -12,20 +12,22 @@ $phone		= $_REQUEST["phone"];
 $id		= $_REQUEST["id"];
 $updated = date("Y/m/d");
 
+
 try {	
 	$insert = "UPDATE students SET name = '$name', f_name = '$fname', reg_number = '$registration', email = '$email', nic = '$nic', phone = '$phone', updated_at = '$updated' WHERE id = '$id' ";
 	if(mysqli_query($dbc, $insert))
 	{
 		$_SESSION["msg"] = "Record Updated successfully...";
-		header("Location: /studentPortel/");
+		header("Location: /studentPortel/index.php");
 	} else { 
 		$_SESSION["error"] = " ".mysqli_error($dbc);
-		header("Location: /studentPortel/".mysqli_error($dbc));
+		header("Location: /studentPortel/index.php");
 	}
 }
 //catch exception
 catch(Exception $e) {
  $error = $e->getMessage();
-  header("Location: /studentProtel/?error=".$error);
+ $_SESSION["error"] =$error;
+  header("Location: /studentPortel/index.php");
 }	
 ?>
