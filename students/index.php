@@ -259,6 +259,9 @@
       $("#textBox4").val($(this).attr('data-reg_number'));
       $("#textBox5").val($(this).attr('data-nic'));
       $("#textBox6").val($(this).attr('data-phone'));
+
+
+      $("#id").val($(this).attr('data-id'));
     });
   });
 </script>
