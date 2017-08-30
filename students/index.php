@@ -23,16 +23,18 @@
               <h3 class="box-title">Students</h3>
                  <div class="col-sm-12">
                      <!-- Message to save records -->
-                    <div calss="mesg" style="  color:#478C61; float:right; width:50%;">
-                        <?php  
-                          if(isset($_SESSION['msg'])) 
-                          {
-                            echo $_SESSION['msg'];
-                            unset($_SESSION['msg']);
-                          }
-                        ?>
+                    <div id="mesg" style="  color:#478C61; float:right; width:50%;">
+                       <p> 
+                         <?php  
+                            if(isset($_SESSION['msg'])) 
+                            {
+                              echo $_SESSION['msg'];
+                              unset($_SESSION['msg']);
+                            }
+                          ?>                         
+                        </p>
                       </div> <!-- message end   -->
-                       <div calss="mesg" style="  color:red; float:right; width:50%;">
+                       <div id="mesg" style="  color:red; float:right; width:50%;">
                         <?php  
                           if(isset($_SESSION['error'])) 
                           {
@@ -250,6 +252,13 @@
   <!-- /.content-wrapper -->
     <script src="/studentPortel/assets/plugins/jquery/jquery-2.2.3.min.js"></script>
 <script type="text/javascript">
+function closeMesg() {
+          var a;
+          a = document.getElementById("mesg");
+          setTimeout(function () {
+              a.innerHTML = " ";
+            }, 2000);
+        }
   $(document).ready(function(){
     $(document).on("click", ".editBtn", function(){
       $("#editStudent").modal('show');
@@ -259,9 +268,8 @@
       $("#textBox4").val($(this).attr('data-reg_number'));
       $("#textBox5").val($(this).attr('data-nic'));
       $("#textBox6").val($(this).attr('data-phone'));
-
-
       $("#id").val($(this).attr('data-id'));
     });
+    closeMesg();
   });
 </script>
