@@ -14,7 +14,7 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <title>Admin Login Form</title>
-  <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap.min.css">
   
       <style>
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
@@ -65,7 +65,7 @@ body {
  	<center>
  		<h1>ISP University</h1> 
  		<hr>
- 		<h2>Admin Area</h2> 
+ 		<h2>Student Area</h2> 
  		<hr>
  		<p>Enter your Username and Password</p>
  	</center>	
@@ -75,13 +75,13 @@ body {
     <form method="post" action="services/login.php">
     	<div class="form-group">
           <div class="col-sm-12">
-              <input type="text" class="form-control" name="u" placeholder="User name" required>
+              <input type="text" class="form-control" name="name" placeholder="User name" required>
               <br>
           </div>
       	</div>
       	<div class="form-group">
           <div class="col-sm-12">
-              <input type="password" class="form-control" name="p" placeholder="Password" required>
+              <input type="password" class="form-control" name="name" placeholder="Password" required>
               <br>
           </div>
       	</div>
@@ -91,29 +91,6 @@ body {
           </div>
       	</div>
     </form>
-     <div id="mesg" style="  color:red; float:right; width:100%;">
-      <?php  
-        if(isset($_SESSION['error'])) 
-        {
-          echo $_SESSION['error'];
-          unset($_SESSION['error']);
-        }
-      ?>
-    </div> <!-- message end   -->
  </div>
-
-
- <script type="text/javascript">
-  function closeMesg() {
-          var a;
-          a = document.getElementById("mesg");
-          setTimeout(function () {
-              a.innerHTML = " ";
-            }, 2000);
-        }
-     closeMesg();    
-</script>
 </body>
 </html>
-
-
