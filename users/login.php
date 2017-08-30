@@ -75,19 +75,19 @@ body {
     <form method="post" action="services/login.php">
     	<div class="form-group">
           <div class="col-sm-12">
-              <input type="text" class="form-control" name="name" placeholder="User name" required>
+              <input type="text" class="form-control" name="u" placeholder="User name" required>
               <br>
           </div>
       	</div>
       	<div class="form-group">
           <div class="col-sm-12">
-              <input type="password" class="form-control" name="name" placeholder="Password" required>
+              <input type="password" class="form-control" name="p" placeholder="Password" required>
               <br>
           </div>
       	</div>
       	<div class="form-group">
           <div class="col-sm-12">
-                <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+                <button type="submit" class="btn btn-primary btn-block btn-large">Let me in</button>
           </div>
       	</div>
     </form>

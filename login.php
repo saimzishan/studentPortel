@@ -87,7 +87,7 @@ body {
       	</div>
       	<div class="form-group">
           <div class="col-sm-12">
-                <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+                <button type="submit" class="btn btn-primary btn-block btn-large">Let me in</button>
           </div>
       	</div>
     </form>
