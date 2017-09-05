@@ -1,4 +1,7 @@
-
+<?php
+  session_start();
+  $id;
+?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -13,7 +16,7 @@
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
-        <section class="col-lg-7 col-md-7">
+        <section class="col-lg-12 col-md-12">
 
           <!-- Chat box -->
           <div class="box box-success">
@@ -25,7 +28,41 @@
             <div class="box-body chat" id="chat-box">
               <!-- chat item -->
               <div class="item">
-              
+               <?php  
+                    $q = "SELECT * FROM samester";
+                    $r = mysqli_query($dbc,$q);
+
+                    if (mysqli_num_rows($r) <= 0) {
+                    echo "<p>Please add a teacher</p>";
+
+                     }else { 
+                      ?> 
+                       <div class="form-group">
+                        <label class="control-label col-md-4" for="FatherName">Select samester:</label>
+                        <div class="col-sm-8">
+                         <select id="stu_id" name="stu_id" style="width:100%; height: 37px;" onchange="getStudents()">
+                            <option name="stu_id"> </option> 
+                            <?php 
+
+                             while( $row = $r->fetch_assoc() ) { ?>
+
+                              <option value="<?=$row['id']?>"><?=$row['name']?></option>;
+                            <?php }
+                            ?>   
+                            </select> 
+                        </div>
+                       
+                       </div>
+                     <?php } 
+                ?>    
+                <!-- display student data after change if any  -->
+              <!--  <script>
+                function getStudents() {
+                  var x = document.getElementById("stu_id").value;
+                   window.location.href = "/studentPortel/fee.php?id="+x;
+                  <?php $id = $_GET['id']; echo $id;?>
+              }
+              </script> -->
               </div>
               <!-- /.item -->
         
@@ -49,3 +86,4 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+ 
