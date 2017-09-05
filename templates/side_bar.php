@@ -43,6 +43,14 @@
             <span> Teachers</span>
           </a>
         </li>
+         <?php $curntPage =  curPageName(); if($curntPage == "samester.php") { ?>
+        <li class="treeview active"> <?php
+        } else{?>  <li class="treeview"> <?php }  ?>
+          <a href="./samester.php">
+            <i class="fa fa-university"></i>
+            <span> Samister details</span>
+          </a>
+        </li>
         <?php $curntPage =  curPageName(); if($curntPage == "subjects.php") { ?>
         <li class="treeview active"> <?php
         } else{?>  <li class="treeview"> <?php }  ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2017 at 11:28 PM
+-- Generation Time: Sep 05, 2017 at 01:40 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -82,9 +82,20 @@ CREATE TABLE `results` (
 CREATE TABLE `samester` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fee` int(10) DEFAULT '50000',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `samester`
+--
+
+INSERT INTO `samester` (`id`, `name`, `fee`, `created_at`, `updated_at`) VALUES
+(1, '1st ', 50000, '2017-09-10 07:00:00', NULL),
+(2, '2nd', 50000, '2017-09-05 07:00:00', NULL),
+(3, '3rd', 50000, '2017-09-05 07:00:00', NULL),
+(4, '4th', 52000, '2017-09-05 07:00:00', '2017-09-05 07:00:00');
 
 -- --------------------------------------------------------
 
@@ -100,6 +111,7 @@ CREATE TABLE `students` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nic` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cur_samister` int(10) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -108,11 +120,10 @@ CREATE TABLE `students` (
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `name`, `f_name`, `reg_number`, `email`, `nic`, `phone`, `created_at`, `updated_at`) VALUES
-(1, 'asad', 'ali', 'MSCS-0213-201', 'asad@gmail.com', '123456789', '3450666', '2017-08-01 12:00:00', '2017-08-26 12:00:00'),
-(2, 'test', 'test', 'MSCS-0213-202', 'test@test.com', '98765321', '123456', NULL, NULL),
-(3, 'saimzishan', 'saim', 'MSCS-0213-203', 'saimzishan@gmail.com', '12345678', '123456', '2017-08-25 12:00:00', NULL),
-(4, 'Muhammad Yousaf Zeeshan yousaf', 'ali', 'MSCS-0213-204', 'waqar.m.ahamd@gmail.com', '98765321', '123456', '2017-08-26 12:00:00', NULL);
+INSERT INTO `students` (`id`, `name`, `f_name`, `reg_number`, `email`, `nic`, `phone`, `cur_samister`, `created_at`, `updated_at`) VALUES
+(1, 'asad', 'ali', 'MSCS-0213-201', 'asad@gmail.com', '123456789', '3450666', 1, '2017-08-01 12:00:00', '2017-09-05 07:00:00'),
+(3, 'saimzishan', 'saim', 'MSCS-0213-203', 'saimzishan@gmail.com', '12345678', '123456', 1, '2017-08-25 12:00:00', NULL),
+(4, 'Zeeshan yousaf', 'yousaf', 'MSCS-0213-204', 'waqar@gmail.com', '98765321', '123456', 1, '2017-08-26 12:00:00', '2017-08-30 07:00:00');
 
 -- --------------------------------------------------------
 
@@ -125,12 +136,18 @@ CREATE TABLE `subjects` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `credit_hour` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `teacher_id` int(10) UNSIGNED NOT NULL,
-  `result_id` int(10) UNSIGNED NOT NULL,
-  `stu_id` int(10) UNSIGNED NOT NULL,
   `samester_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `subjects`
+--
+
+INSERT INTO `subjects` (`id`, `name`, `credit_hour`, `teacher_id`, `samester_id`, `created_at`, `updated_at`) VALUES
+(6, 'DS', '6', 1, 1, '2017-09-05 07:00:00', NULL),
+(5, 'Algo', '5', 2, 4, '2017-09-05 07:00:00', '2017-09-05 07:00:00');
 
 -- --------------------------------------------------------
 
@@ -148,6 +165,14 @@ CREATE TABLE `teachers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `teachers`
+--
+
+INSERT INTO `teachers` (`id`, `name`, `f_name`, `nic`, `phone`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'jhon', 'doe', '1212121212', '1212121212', 'john@test.com', '2017-09-05 07:00:00', NULL),
+(2, 'ali', 'shab', '1212121212', '1212121212', 'ali@test.com', '2017-09-05 07:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -209,8 +234,6 @@ ALTER TABLE `students`
 ALTER TABLE `subjects`
   ADD PRIMARY KEY (`id`),
   ADD KEY `subjects_teacher_id_foreign` (`teacher_id`),
-  ADD KEY `subjects_result_id_foreign` (`result_id`),
-  ADD KEY `subjects_stu_id_foreign` (`stu_id`),
   ADD KEY `subjects_samester_id_foreign` (`samester_id`);
 
 --
@@ -245,7 +268,7 @@ ALTER TABLE `results`
 -- AUTO_INCREMENT for table `samester`
 --
 ALTER TABLE `samester`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `students`
 --
@@ -255,12 +278,12 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --

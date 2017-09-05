@@ -26,7 +26,7 @@
               <h3 class="box-title">Teachers</h3>
                  <div class="col-sm-12">
                      <!-- Message to save records -->
-                    <div calss="mesg" style="  color:#478C61; float:right; width:50%;">
+                    <div id="mesg" style="  color:#478C61; float:right; width:50%;">
                         <?php  
                           if(isset($_SESSION['msg'])) 
                           {
@@ -35,7 +35,7 @@
                           }
                         ?>
                       </div> <!-- message end   -->
-                       <div calss="mesg" style="  color:red; float:right; width:50%;">
+                       <div id="mesg" style="  color:red; float:right; width:50%;">
                         <?php  
                           if(isset($_SESSION['error'])) 
                           {
@@ -67,7 +67,6 @@
                                 <th>Name</th>
                                 <th>Father Name</th>
                                 <th>Email</th>
-                                <th>Reg #</th>                              
                                 <th>NIC #</th>
                                 <th>Phone #</th>
                                 <th>Action</th>
@@ -81,16 +80,15 @@
                                     <td id="stu_name"><?php echo $row['name'];?></td>
                                     <td id="stu_fname"><?php echo $row['f_name'];?></td>
                                     <td id="stu_email"><?php echo $row['email'];?></td>
-                                    <td id="stu_regNumber"><?php echo $row['reg_number'];?></td>
                                     <td id="stu_nic"><?php echo $row['nic'];?></td>
                                     <td id="stu_phone"><?php echo $row['phone'];?></td>
                                     <td>
                                       
-                                      <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                      <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
                                         Edit
                                       </button> |
                                       
-                                      <a href="services/deleteUser.php?del=<?php echo$row['id'];?>">
+                                      <a href="services/teacher/deleteUser.php?del=<?php echo$row['id'];?>">
                                         <button type="button" class="btn btn-small btn-xs btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
                                       </a>
                                     </td>
@@ -123,7 +121,7 @@
                           <h4 class="modal-title">Add New Teacher</h4>
                       </div>
                       <div class="modal-body">
-                          <form action="services/createStudent.php" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                          <form action="services/teacher/createTeacher.php" method="POST" class="form-horizontal" enctype="multipart/form-data">
                           
                               <div class="form-group">
                                   <label class="control-label col-sm-4" for="student_name"> Name:</label>
@@ -141,12 +139,6 @@
                                   <label class="control-label col-sm-4" for="Email">Email</label>
                                   <div class="col-sm-8">
                                       <input type="email" class="form-control" name="email"  placeholder="Email" required>
-                                  </div>
-                              </div>
-                               <div class="form-group">
-                                  <label class="control-label col-sm-4" for="Registration">Registration #:</label>
-                                  <div class="col-sm-8">
-                                      <input type="text" class="form-control number-only" name="registration"  placeholder="Registration #" required>
                                   </div>
                               </div>
                               <div class="form-group">
@@ -187,7 +179,7 @@
                           <h4 class="modal-title" ng-if="!newData.id">Update Teacher</h4>
                       </div>
                       <div class="modal-body">
-                          <form action="services/updateStudent.php" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                          <form action="services/teacher/updateTeacher.php" method="POST" class="form-horizontal" enctype="multipart/form-data">
                               <input type="hidden" name="id" id="id" />
                               <div class="form-group">
                                   <label class="control-label col-sm-4" for="student_name"> Name:</label>
@@ -205,12 +197,6 @@
                                   <label class="control-label col-sm-4" for="Email">Email</label>
                                   <div class="col-sm-8">
                                       <input type="email" class="form-control" name="email"  placeholder="Email" id="textBox3"  required>
-                                  </div>
-                              </div>
-                               <div class="form-group">
-                                  <label class="control-label col-sm-4" for="Registration">Registration #:</label>
-                                  <div class="col-sm-8">
-                                      <input type="text" id="textBox4"  class="form-control number-only" name="registration"  placeholder="Registration #" required>
                                   </div>
                               </div>
                               <div class="form-group">
@@ -253,15 +239,22 @@
   <!-- /.content-wrapper -->
     <script src="/studentPortel/assets/plugins/jquery/jquery-2.2.3.min.js"></script>
 <script type="text/javascript">
+    function closeMesg() {
+          var a;
+          a = document.getElementById("mesg");
+          setTimeout(function () {
+              a.innerHTML = " ";
+            }, 2000);
+        }
   $(document).ready(function(){
     $(document).on("click", ".editBtn", function(){
       $("#editTeacher").modal('show');
       $("#textBox1").val($(this).attr('data-name'));
       $("#textBox2").val($(this).attr('data-f_name'));
       $("#textBox3").val($(this).attr('data-email'));
-      $("#textBox4").val($(this).attr('data-reg_number'));
       $("#textBox5").val($(this).attr('data-nic'));
       $("#textBox6").val($(this).attr('data-phone'));
     });
+     closeMesg();
   });
 </script>

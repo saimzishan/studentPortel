@@ -270,6 +270,7 @@ function closeMesg() {
       $("#textBox6").val($(this).attr('data-phone'));
       $("#id").val($(this).attr('data-id'));
     });
-    closeMesg();
+   closeMesg();
   });
+   
 </script>

@@ -15,7 +15,7 @@
   <title>Students portel| Subjects</title>
   <?php include('header.php');?>
 <body class="hold-transition skin-blue sidebar-mini">
-<?php include('subjects/index.php');?>
+<?php include('samester/index.php');?>
 <!-- ./wrapper -->
 <?php include('end.php');?>
 
