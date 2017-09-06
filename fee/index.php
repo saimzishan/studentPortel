@@ -23,6 +23,29 @@
               <i class="fa fa-file"></i>
 
               <h3 class="box-title">Students Fee</h3>
+               <div class="col-sm-12">
+                     <!-- Message to save records -->
+                    <div id="mesg" style="  color:#478C61; float:right; width:50%;">
+                       <p> 
+                         <?php  
+                            if(isset($_SESSION['msg'])) 
+                            {
+                              echo $_SESSION['msg'];
+                              unset($_SESSION['msg']);
+                            }
+                          ?>                         
+                        </p>
+                      </div> <!-- message end   -->
+                       <div id="mesg" style="  color:red; float:right; width:50%;">
+                        <?php  
+                          if(isset($_SESSION['error'])) 
+                          {
+                            echo $_SESSION['error'];
+                            unset($_SESSION['error']);
+                          }
+                        ?>
+                      </div> <!-- message end   -->
+                  </div>
             </div>
             <div class="box-body chat" id="chat-box">
               <!-- chat item -->
@@ -69,9 +92,12 @@
                                               <td id="stu_nic"><?php echo $row['nic'];?></td>
                                               <td id="stu_phone"><?php echo $row['phone'];?></td>
                                               <td>
-                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>'>
+                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '1'>
                                                   Update Fee
-                                                </button>
+                                                </button> | 
+                                                 <a href="/studentPortel/feeDetail.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-primary">Fee Details </button>
+                                                </a> 
                                               </td>
                                             </tr>
                                           </tbody>
@@ -123,9 +149,12 @@
                                               <td id="stu_nic"><?php echo $row['nic'];?></td>
                                               <td id="stu_phone"><?php echo $row['phone'];?></td>
                                               <td>
-                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '2'>
                                                   Update Fee
-                                                </button>
+                                                </button> |
+                                                <a href="/studentPortel/feeDetail.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-primary">Fee Details </button>
+                                                </a> 
                                               </td>
                                             </tr>
                                           </tbody>
@@ -177,9 +206,12 @@
                                               <td id="stu_nic"><?php echo $row['nic'];?></td>
                                               <td id="stu_phone"><?php echo $row['phone'];?></td>
                                               <td>
-                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '3'>
                                                   Update Fee
-                                                </button>
+                                                </button> |
+                                                <a href="/studentPortel/feeDetail.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-primary">Fee Details </button>
+                                                </a> 
                                               </td>
                                             </tr>
                                           </tbody>
@@ -231,9 +263,12 @@
                                               <td id="stu_nic"><?php echo $row['nic'];?></td>
                                               <td id="stu_phone"><?php echo $row['phone'];?></td>
                                               <td>
-                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '4'>
                                                   Update Fee
-                                                </button>
+                                                </button> |
+                                                <a href="/studentPortel/feeDetail.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-primary">Fee Details </button>
+                                                </a> 
                                               </td>
                                             </tr>
                                           </tbody>
@@ -269,8 +304,9 @@
                           <h4 class="modal-title">Add New fee</h4>
                       </div>
                       <div class="modal-body">
-                          <form action="services/createStudent.php" method="POST" class="form-horizontal" enctype="multipart/form-data">
-                          
+                          <form action="services/fee/addfee.php" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                          <input type="hidden" name="stu_id" id="stu_id">
+                          <input type="hidden" name="samister_id" id="samister_id">
                               <div class="form-group">
                                   <label class="control-label col-sm-4" for="student_name">Student Name:</label>
                                   <div class="col-sm-8">
@@ -281,6 +317,12 @@
                                   <label class="control-label col-sm-4" for="FatherName">Fee of this month:</label>
                                   <div class="col-sm-8">
                                       <input type="number" class="form-control number-only" name="stu_fee"  placeholder="" required>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label class="control-label col-sm-4" for="FatherName">Date</label>
+                                  <div class="col-sm-8">
+                                      <input type="date" class="form-control" name="date" value="<?php echo date("Y-m-d");?>"  placeholder="" required>
                                   </div>
                               </div>
                               <div class="form-group">
@@ -318,8 +360,9 @@ function closeMesg() {
     $(document).on("click", ".editBtn", function(){
       $("#addfee").modal('show');
       $("#textBox1").val($(this).attr('data-name'));
-      $("#id").val($(this).attr('data-id'));
-    });
+      $("#stu_id").val($(this).attr('data-id'));
+      $("#samister_id").val($(this).attr('data-samister'));
+    }); 
    closeMesg();
   });
    

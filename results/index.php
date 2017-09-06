@@ -1,4 +1,6 @@
-
+<?php
+  session_start();
+?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -20,12 +22,12 @@
             <div class="box-header">
               <i class="fa fa-files-o"></i>
 
-              <h3 class="box-title">Students Results</h3>
+              <h3 class="box-title">Students Result</h3>
             </div>
             <div class="box-body chat" id="chat-box">
               <!-- chat item -->
               <div class="item">
-                   <div class="panel-group" id="accordion">
+                <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -38,7 +40,6 @@
                               <?php  
                               $q = "SELECT * FROM students WHERE cur_samister = 1";
                               $r = mysqli_query($dbc,$q);
-
                               if (mysqli_num_rows($r) <= 0) {
                               echo "<p>Record Empty</p>";
 
@@ -68,9 +69,12 @@
                                               <td id="stu_nic"><?php echo $row['nic'];?></td>
                                               <td id="stu_phone"><?php echo $row['phone'];?></td>
                                               <td>
-                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
-                                                  Update Result
-                                                </button>
+                                                 <a href="/studentPortel/resultUpdate.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-success">Result update </button>
+                                                </a>  | 
+                                                 <a href="/studentPortel/resultDetails.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-primary">Result Details </button>
+                                                </a> 
                                               </td>
                                             </tr>
                                           </tbody>
@@ -122,9 +126,12 @@
                                               <td id="stu_nic"><?php echo $row['nic'];?></td>
                                               <td id="stu_phone"><?php echo $row['phone'];?></td>
                                               <td>
-                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '2'>
                                                   Update Result
-                                                </button>
+                                                </button> |
+                                                <a href="/studentPortel/resultDetails.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-primary">Result Details </button>
+                                                </a> 
                                               </td>
                                             </tr>
                                           </tbody>
@@ -176,9 +183,12 @@
                                               <td id="stu_nic"><?php echo $row['nic'];?></td>
                                               <td id="stu_phone"><?php echo $row['phone'];?></td>
                                               <td>
-                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '3'>
                                                   Update Result
-                                                </button>
+                                                </button> |
+                                                <a href="/studentPortel/resultDetails.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-primary">Result Details </button>
+                                                </a> 
                                               </td>
                                             </tr>
                                           </tbody>
@@ -230,9 +240,12 @@
                                               <td id="stu_nic"><?php echo $row['nic'];?></td>
                                               <td id="stu_phone"><?php echo $row['phone'];?></td>
                                               <td>
-                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '4'>
                                                   Update Result
-                                                </button>
+                                                </button> |
+                                                <a href="/studentPortel/resultDetails.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-primary">Result Details </button>
+                                                </a> 
                                               </td>
                                             </tr>
                                           </tbody>
@@ -256,8 +269,6 @@
         </section>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <section class="col-lg-5 connectedSortable">
-        </section>
         <!-- right col -->
       </div>
       <!-- /.row (main row) -->
