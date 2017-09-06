@@ -49,55 +49,242 @@
               </div> 
             </div>
             <div class="box-body chat" id="chat-box">
-              <!-- chat item -->  
-              <div class="item">  
-                  <?php  
-                    $q = "SELECT * FROM students ";
-                    $r = mysqli_query($dbc,$q);
+              <!-- chat item -->
+              <div class="item">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-th">
+                                </span>First samister</a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                              <?php  
+                              $q = "SELECT * FROM students WHERE cur_samister = 1";
+                              $r = mysqli_query($dbc,$q);
 
-                    if (mysqli_num_rows($r) <= 0) {
-                    echo "<p>Record Empty</p>";
+                              if (mysqli_num_rows($r) <= 0) {
+                              echo "<p>Record Empty</p>";
 
-                     }else { 
-                      ?>
-                      <table class="table table-hover table-bordered">
-                          <thead>
-                              <tr>
-                                <th>Name</th>
-                                <th>Father Name</th>
-                                <th>Email</th>
-                                <th>Reg #</th>                              
-                                <th>NIC #</th>
-                                <th>Phone #</th>
-                                <th>Action</th>
-                              </tr>
-                            </thead>
-                          <?php } ?>  
-                        <?php           
-                          while( $row = $r->fetch_assoc() ) { ?>
-                             <tbody>
-                                  <tr>
-                                    <td id="stu_name"><?php echo $row['name'];?></td>
-                                    <td id="stu_fname"><?php echo $row['f_name'];?></td>
-                                    <td id="stu_email"><?php echo $row['email'];?></td>
-                                    <td id="stu_regNumber"><?php echo $row['reg_number'];?></td>
-                                    <td id="stu_nic"><?php echo $row['nic'];?></td>
-                                    <td id="stu_phone"><?php echo $row['phone'];?></td>
-                                    <td>
-                                      
-                                      <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
-                                        Edit
-                                      </button> |
-                                      
-                                      <a href="services/deleteUser.php?del=<?php echo$row['id'];?>">
-                                        <button type="button" class="btn btn-small btn-xs btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
-                                      </a>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                        <?php } #End of while
-                        ?>
-                    </table>
+                               }else { 
+                                ?>
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                        <tr>
+                                          <th>Name</th>
+                                          <th>Father Name</th>
+                                          <th>Email</th>
+                                          <th>Reg #</th>                              
+                                          <th>NIC #</th>
+                                          <th>Phone #</th>
+                                          <th>Action</th>
+                                        </tr>
+                                      </thead>
+                                    <?php } ?>  
+                                  <?php           
+                                    while( $row = $r->fetch_assoc() ) { ?>
+                                       <tbody>
+                                            <tr>
+                                              <td id="stu_name"><?php echo $row['name'];?></td>
+                                              <td id="stu_fname"><?php echo $row['f_name'];?></td>
+                                              <td id="stu_email"><?php echo $row['email'];?></td>
+                                              <td id="stu_regNumber"><?php echo $row['reg_number'];?></td>
+                                              <td id="stu_nic"><?php echo $row['nic'];?></td>
+                                              <td id="stu_phone"><?php echo $row['phone'];?></td>
+                                              <td>
+                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                                  Edit
+                                                </button> |
+                                                
+                                                <a href="services/deleteUser.php?del=<?php echo$row['id'];?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                                </a> 
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                  <?php } #End of while
+                                  ?>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th">
+                                </span>Secund samister</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <?php  
+                              $q = "SELECT * FROM students WHERE cur_samister = 2";
+                              $r = mysqli_query($dbc,$q);
+
+                              if (mysqli_num_rows($r) <= 0) {
+                              echo "<p>Record Empty</p>";
+
+                               }else { 
+                                ?>
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                        <tr>
+                                          <th>Name</th>
+                                          <th>Father Name</th>
+                                          <th>Email</th>
+                                          <th>Reg #</th>                              
+                                          <th>NIC #</th>
+                                          <th>Phone #</th>
+                                          <th>Action</th>
+                                        </tr>
+                                      </thead>
+                                    <?php } ?>  
+                                  <?php           
+                                    while( $row = $r->fetch_assoc() ) { ?>
+                                       <tbody>
+                                            <tr>
+                                              <td id="stu_name"><?php echo $row['name'];?></td>
+                                              <td id="stu_fname"><?php echo $row['f_name'];?></td>
+                                              <td id="stu_email"><?php echo $row['email'];?></td>
+                                              <td id="stu_regNumber"><?php echo $row['reg_number'];?></td>
+                                              <td id="stu_nic"><?php echo $row['nic'];?></td>
+                                              <td id="stu_phone"><?php echo $row['phone'];?></td>
+                                              <td>
+                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                                  Edit
+                                                </button> |
+                                                
+                                                <a href="services/deleteUser.php?del=<?php echo$row['id'];?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                                </a> 
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                  <?php } #End of while
+                                  ?>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-th">
+                                </span>Third samister</a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                              <?php  
+                              $q = "SELECT * FROM students WHERE cur_samister = 3";
+                              $r = mysqli_query($dbc,$q);
+
+                              if (mysqli_num_rows($r) <= 0) {
+                              echo "<p>Record Empty</p>";
+
+                               }else { 
+                                ?>
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                        <tr>
+                                          <th>Name</th>
+                                          <th>Father Name</th>
+                                          <th>Email</th>
+                                          <th>Reg #</th>                              
+                                          <th>NIC #</th>
+                                          <th>Phone #</th>
+                                          <th>Action</th>
+                                        </tr>
+                                      </thead>
+                                    <?php } ?>  
+                                  <?php           
+                                    while( $row = $r->fetch_assoc() ) { ?>
+                                       <tbody>
+                                            <tr>
+                                              <td id="stu_name"><?php echo $row['name'];?></td>
+                                              <td id="stu_fname"><?php echo $row['f_name'];?></td>
+                                              <td id="stu_email"><?php echo $row['email'];?></td>
+                                              <td id="stu_regNumber"><?php echo $row['reg_number'];?></td>
+                                              <td id="stu_nic"><?php echo $row['nic'];?></td>
+                                              <td id="stu_phone"><?php echo $row['phone'];?></td>
+                                              <td>
+                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                                  Edit
+                                                </button> |
+                                                
+                                                <a href="services/deleteUser.php?del=<?php echo$row['id'];?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                                </a> 
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                  <?php } #End of while
+                                  ?>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-th">
+                                </span>Fourth samister</a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                          <div class="panel-body">
+                              <?php  
+                              $q = "SELECT * FROM students WHERE cur_samister = 4";
+                              $r = mysqli_query($dbc,$q);
+
+                              if (mysqli_num_rows($r) <= 0) {
+                              echo "<p>Record Empty</p>";
+
+                               }else { 
+                                ?>
+                                <table class="table table-hover table-bordered">
+                                    <thead>
+                                        <tr>
+                                          <th>Name</th>
+                                          <th>Father Name</th>
+                                          <th>Email</th>
+                                          <th>Reg #</th>                              
+                                          <th>NIC #</th>
+                                          <th>Phone #</th>
+                                          <th>Action</th>
+                                        </tr>
+                                      </thead>
+                                    <?php } ?>  
+                                  <?php           
+                                    while( $row = $r->fetch_assoc() ) { ?>
+                                       <tbody>
+                                            <tr>
+                                              <td id="stu_name"><?php echo $row['name'];?></td>
+                                              <td id="stu_fname"><?php echo $row['f_name'];?></td>
+                                              <td id="stu_email"><?php echo $row['email'];?></td>
+                                              <td id="stu_regNumber"><?php echo $row['reg_number'];?></td>
+                                              <td id="stu_nic"><?php echo $row['nic'];?></td>
+                                              <td id="stu_phone"><?php echo $row['phone'];?></td>
+                                              <td>
+                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-f_name='<?=$row['f_name']?>' data-email='<?=$row['email']?>' data-reg_number='<?=$row['reg_number']?>' data-nic='<?=$row['nic']?>' data-phone='<?=$row['phone']?>'>
+                                                  Edit
+                                                </button> |
+                                                
+                                                <a href="services/deleteUser.php?del=<?php echo$row['id'];?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                                </a> 
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                  <?php } #End of while
+                                  ?>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
               </div>
               <!-- /.item -->
         
