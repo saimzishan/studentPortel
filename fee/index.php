@@ -152,7 +152,7 @@
                                                 <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '2'>
                                                   Update Fee
                                                 </button> |
-                                                <a href="/studentPortel/feeDetail.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                <a href="/studentPortel/feeDetail.php?stu_id=<?php echo$row['id']?>&samister_id=2&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
                                                   <button type="button" class="btn btn-small btn-xs btn-primary">Fee Details </button>
                                                 </a> 
                                               </td>
@@ -209,7 +209,7 @@
                                                 <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '3'>
                                                   Update Fee
                                                 </button> |
-                                                <a href="/studentPortel/feeDetail.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                <a href="/studentPortel/feeDetail.php?stu_id=<?php echo$row['id']?>&samister_id=3&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
                                                   <button type="button" class="btn btn-small btn-xs btn-primary">Fee Details </button>
                                                 </a> 
                                               </td>
@@ -266,7 +266,7 @@
                                                 <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '4'>
                                                   Update Fee
                                                 </button> |
-                                                <a href="/studentPortel/feeDetail.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                <a href="/studentPortel/feeDetail.php?stu_id=<?php echo$row['id']?>&samister_id=4&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
                                                   <button type="button" class="btn btn-small btn-xs btn-primary">Fee Details </button>
                                                 </a> 
                                               </td>

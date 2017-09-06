@@ -126,10 +126,10 @@
                                               <td id="stu_nic"><?php echo $row['nic'];?></td>
                                               <td id="stu_phone"><?php echo $row['phone'];?></td>
                                               <td>
-                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '2'>
-                                                  Update Result
-                                                </button> |
-                                                <a href="/studentPortel/resultDetails.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                <a href="/studentPortel/resultUpdate.php?stu_id=<?php echo$row['id']?>&samister_id=2&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-success">Result update </button>
+                                                </a> |
+                                                <a href="/studentPortel/resultDetails.php?stu_id=<?php echo$row['id']?>&samister_id=2&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
                                                   <button type="button" class="btn btn-small btn-xs btn-primary">Result Details </button>
                                                 </a> 
                                               </td>
@@ -183,10 +183,10 @@
                                               <td id="stu_nic"><?php echo $row['nic'];?></td>
                                               <td id="stu_phone"><?php echo $row['phone'];?></td>
                                               <td>
-                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '3'>
-                                                  Update Result
-                                                </button> |
-                                                <a href="/studentPortel/resultDetails.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                 <a href="/studentPortel/resultUpdate.php?stu_id=<?php echo$row['id']?>&samister_id=3&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-success">Result update </button>
+                                                </a> |
+                                                <a href="/studentPortel/resultDetails.php?stu_id=<?php echo$row['id']?>&samister_id=3&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
                                                   <button type="button" class="btn btn-small btn-xs btn-primary">Result Details </button>
                                                 </a> 
                                               </td>
@@ -240,10 +240,10 @@
                                               <td id="stu_nic"><?php echo $row['nic'];?></td>
                                               <td id="stu_phone"><?php echo $row['phone'];?></td>
                                               <td>
-                                                <button type="button" class="editBtn btn btn-info btn-small btn-xs" data-backdrop="static" data-keyboard="false" data-id='<?=$row['id']?>' data-name='<?=$row['name']?>' data-samister= '4'>
-                                                  Update Result
-                                                </button> |
-                                                <a href="/studentPortel/resultDetails.php?stu_id=<?php echo$row['id']?>&samister_id=1&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                 <a href="/studentPortel/resultUpdate.php?stu_id=<?php echo$row['id']?>&samister_id=4&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
+                                                  <button type="button" class="btn btn-small btn-xs btn-success">Result update </button>
+                                                </a> |
+                                                <a href="/studentPortel/resultDetails.php?stu_id=<?php echo$row['id']?>&samister_id=4&name=<?php echo$row['name']?>&rNumber=<?php echo$row['reg_number']?>">
                                                   <button type="button" class="btn btn-small btn-xs btn-primary">Result Details </button>
                                                 </a> 
                                               </td>
