@@ -49,7 +49,7 @@
 							$stu_id = $_GET['stu_id'];
 							$samister_id = $_GET['samister_id'];
 							echo $userId;						
-							 $q = "SELECT * FROM results WHERE stu_id = '$stu_id' AND  samester_id = '$samister_id' ";
+							 $q = "SELECT * FROM result1 WHERE stu_id = '$stu_id' ";
 	                          $r = mysqli_query($dbc,$q);
 	                          if (mysqli_num_rows($r) <= 0){
 	                          		echo "<p>Record Empty</p>";
@@ -59,8 +59,12 @@
                                 <table class="table table-hover table-bordered">
                                     <thead>
                                         <tr>
-                                          <th>Date</th>
-                                          <th>Fee</th>
+                                          <th>English</th>
+                                          <th>Algo</th>
+                                          <th>c</th>
+                                          <th>Fundamental of computer</th>
+                                          <th>dld</th>
+                                          <th>Discrete Math</th>
                                         </tr>
                                       </thead>
                                     <?php } ?>  
@@ -69,17 +73,19 @@
                                     while( $row = $r->fetch_assoc() ) { ?>
                                       
                                             <tr>
-                                              <td id="stu_name"><?php echo $row['month'];?></td>
-                                              <td id="stu_fname"><?php $temp += $row['amount']; echo $row['amount'];?></td>
+                                              <td id="stu_name"><?php echo $row['eng'];?></td>
+                                              <td id="stu_fname"><?php echo $row['algorithem'];?></td>
+                                              
+                                              <td id="stu_fname"><?php echo $row['c'];?></td>
+                                              <td id="stu_fname"><?php echo $row['foc'];?></td>
+                                              <td id="stu_fname"><?php echo $row['dld'];?></td>
+                                              <td id="stu_fname"><?php echo $row['discrete'];?></td>
+
                                             </tr>
                                          
                                   <?php } #End of while
                                   ?>
                                    </tbody>
-                                   <tr>
-                                   	<td>Total Fee</td>
-                                   	<td><?php echo $temp; ?></td>
-                                   </tr>
                               </table>
                        <?php }       
 	              	?>

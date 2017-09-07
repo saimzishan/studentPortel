@@ -56,7 +56,7 @@
 	                      		}
                           		else { 
                                 ?>
-                              <form action="#" method="POST">
+                              <form action="services/results/addResult.php" method="POST">
                                 <table class="table table-hover table-bordered">
                                     <thead>
                                         <tr>
@@ -66,16 +66,17 @@
                                       </thead>
                                     <?php } ?>  
                                      <tbody>
-                                      <?php           
+                                      <?php  $i = 1;          
                                         while( $row = $r->fetch_assoc() ) { ?>
                                           
                                                 <tr>
                                                   <td id="stu_name"><?php echo $row['name'];?></td>
-                                                  <td id="stu_fname"><input type="text" name=""></td>
+                                                  <td id="stu_fname"><input type="number" required name="<?= 'textBox'.$i++ ?>"></td>
                                                 </tr>
                                              
                                       <?php } #End of while
                                       ?>
+                                      <input type="hidden" name="stu_id" value="<?= $stu_id?>">
                                       </tbody>
                               </table>
                                <center><button class="btn btn-info">Update</button> </center>

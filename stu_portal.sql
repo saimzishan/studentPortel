@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 05, 2017 at 01:40 PM
+-- Generation Time: Sep 07, 2017 at 11:43 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -56,6 +56,33 @@ CREATE TABLE `password_resets` (
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `result1`
+--
+
+CREATE TABLE `result1` (
+  `id` int(11) NOT NULL,
+  `stu_id` int(10) NOT NULL,
+  `algorithem` int(10) NOT NULL,
+  `c` int(10) NOT NULL,
+  `discrete` int(10) NOT NULL,
+  `foc` int(10) NOT NULL,
+  `eng` int(10) NOT NULL,
+  `dld` int(10) NOT NULL,
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `result1`
+--
+
+INSERT INTO `result1` (`id`, `stu_id`, `algorithem`, `c`, `discrete`, `foc`, `eng`, `dld`, `created_at`, `updated_at`) VALUES
+(1, 1, 78, 69, 67, 56, 70, 76, '2017-09-07 07:00:00', NULL),
+(2, 3, 65, 67, 76, 56, 56, 67, '2017-09-07 07:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -121,9 +148,33 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `name`, `f_name`, `reg_number`, `email`, `nic`, `phone`, `cur_samister`, `created_at`, `updated_at`) VALUES
-(1, 'asad', 'ali', 'MSCS-0213-201', 'asad@gmail.com', '123456789', '3450666', 1, '2017-08-01 12:00:00', '2017-09-05 07:00:00'),
-(3, 'saimzishan', 'saim', 'MSCS-0213-203', 'saimzishan@gmail.com', '12345678', '123456', 1, '2017-08-25 12:00:00', NULL),
+(1, 'asad', 'ali', 'MSCS-0213-201', 'asad@gmail.com', '123456789', '3450666', 2, '2017-08-01 12:00:00', '2017-09-05 07:00:00'),
+(3, 'saim zishan', 'saim', 'MSCS-0213-203', 'saimzishan@gmail.com', '12345678', '123456', 2, '2017-08-25 12:00:00', '2017-09-06 07:00:00'),
 (4, 'Zeeshan yousaf', 'yousaf', 'MSCS-0213-204', 'waqar@gmail.com', '98765321', '123456', 1, '2017-08-26 12:00:00', '2017-08-30 07:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stu_fee`
+--
+
+CREATE TABLE `stu_fee` (
+  `id` int(11) NOT NULL,
+  `stu_id` int(10) UNSIGNED NOT NULL,
+  `samister_id` int(10) UNSIGNED NOT NULL,
+  `month` varchar(20) NOT NULL,
+  `amount` varchar(20) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stu_fee`
+--
+
+INSERT INTO `stu_fee` (`id`, `stu_id`, `samister_id`, `month`, `amount`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '2017-09-06', '10000', '2017-09-06 07:00:00', NULL),
+(2, 1, 1, '2017-10-07', '10000', '2017-09-06 07:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -146,8 +197,13 @@ CREATE TABLE `subjects` (
 --
 
 INSERT INTO `subjects` (`id`, `name`, `credit_hour`, `teacher_id`, `samester_id`, `created_at`, `updated_at`) VALUES
-(6, 'DS', '6', 1, 1, '2017-09-05 07:00:00', NULL),
-(5, 'Algo', '5', 2, 4, '2017-09-05 07:00:00', '2017-09-05 07:00:00');
+(6, 'English', '3', 2, 1, '2017-09-05 07:00:00', '2017-09-07 07:00:00'),
+(5, 'Algo', '5', 2, 1, '2017-09-05 07:00:00', '2017-09-05 07:00:00'),
+(7, 'c', '4', 1, 1, '2017-09-07 07:00:00', NULL),
+(8, 'Fundamental of computer ', '3', 1, 1, '2017-09-07 07:00:00', NULL),
+(9, 'Dld', '4', 2, 1, '2017-09-07 07:00:00', NULL),
+(10, 'Discrete Math', '4', 1, 1, '2017-09-07 07:00:00', NULL),
+(11, 'DS', '6', 1, 2, '2017-09-07 07:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -207,6 +263,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `result1`
+--
+ALTER TABLE `result1`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `results`
 --
 ALTER TABLE `results`
@@ -227,6 +289,12 @@ ALTER TABLE `samester`
 ALTER TABLE `students`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `students_email_unique` (`email`);
+
+--
+-- Indexes for table `stu_fee`
+--
+ALTER TABLE `stu_fee`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `subjects`
@@ -260,6 +328,11 @@ ALTER TABLE `users`
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
+-- AUTO_INCREMENT for table `result1`
+--
+ALTER TABLE `result1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
@@ -275,10 +348,15 @@ ALTER TABLE `samester`
 ALTER TABLE `students`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT for table `stu_fee`
+--
+ALTER TABLE `stu_fee`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `teachers`
 --

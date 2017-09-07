@@ -23,6 +23,29 @@
               <i class="fa fa-files-o"></i>
 
               <h3 class="box-title">Students Result</h3>
+               <div class="col-sm-12">
+                     <!-- Message to save records -->
+                    <div id="mesg" style="  color:#478C61; float:right; width:50%;">
+                       <p> 
+                         <?php  
+                            if(isset($_SESSION['msg'])) 
+                            {
+                              echo $_SESSION['msg'];
+                              unset($_SESSION['msg']);
+                            }
+                          ?>                         
+                        </p>
+                      </div> <!-- message end   -->
+                       <div id="mesg" style="  color:red; float:right; width:50%;">
+                        <?php  
+                          if(isset($_SESSION['error'])) 
+                          {
+                            echo $_SESSION['error'];
+                            unset($_SESSION['error']);
+                          }
+                        ?>
+                      </div> <!-- message end   -->
+                  </div>
             </div>
             <div class="box-body chat" id="chat-box">
               <!-- chat item -->
@@ -277,3 +300,16 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+<script type="text/javascript">
+  function closeMesg() {
+          var a;
+          a = document.getElementById("mesg");
+          setTimeout(function () {
+              a.innerHTML = " ";
+            }, 2000);
+        }
+  $(document).ready(function(){
+   closeMesg();
+  });  
+</script>
