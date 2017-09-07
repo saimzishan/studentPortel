@@ -77,6 +77,7 @@
                                       <?php } #End of while
                                       ?>
                                       <input type="hidden" name="stu_id" value="<?= $stu_id?>">
+                                      <input type="hidden" name="samister_id" value="<?= $samister_id?>">
                                       </tbody>
                               </table>
                                <center><button class="btn btn-info">Update</button> </center>

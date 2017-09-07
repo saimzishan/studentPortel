@@ -49,7 +49,7 @@
 							$stu_id = $_GET['stu_id'];
 							$samister_id = $_GET['samister_id'];
 							echo $userId;						
-							 $q = "SELECT * FROM stu_fee WHERE stu_id = '$stu_id' AND  samister_id = '$samister_id' ";
+							 $q = "SELECT * FROM stu_fee WHERE stu_id = '$stu_id' ";
 	                          $r = mysqli_query($dbc,$q);
 	                          if (mysqli_num_rows($r) <= 0){
 	                          		echo "<p>Record Empty</p>";
