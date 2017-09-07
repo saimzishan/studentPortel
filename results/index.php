@@ -300,6 +300,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+<script src="/studentPortel/assets/plugins/jquery/jquery-2.2.3.min.js"></script>
 
 <script type="text/javascript">
   function closeMesg() {

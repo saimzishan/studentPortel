@@ -2,7 +2,7 @@
 session_start();
 	 if(isset($_SESSION['name'])) 
 	 {
-	 	header("Location: /studentPortel/");
+	 	header("Location: /studentPortel/users/");
 	 }else {
 	 	unset($_SESSION['name']);
 	 	session_destroy();
