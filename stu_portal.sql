@@ -84,6 +84,43 @@ INSERT INTO `result1` (`id`, `stu_id`, `algorithem`, `c`, `discrete`, `foc`, `en
 (1, 1, 78, 69, 67, 56, 70, 76, '2017-09-07 07:00:00', NULL),
 (2, 3, 65, 67, 76, 56, 56, 67, '2017-09-07 07:00:00', NULL);
 
+
+CREATE TABLE `result2` (
+  `id` int(11) NOT NULL,
+  `stu_id` int(10) NOT NULL,
+  `ds` int(10) NOT NULL,
+  `oop` int(10) NOT NULL,
+  `assembly` int(10) NOT NULL,
+  `db` int(10) NOT NULL,
+  `se` int(10) NOT NULL,
+  `ca` int(10) NOT NULL,
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+CREATE TABLE `result3` (
+  `id` int(11) NOT NULL,
+  `stu_id` int(10) NOT NULL,
+  `os` int(10) NOT NULL,
+  `c_sharp` int(10) NOT NULL,
+  `web` int(10) NOT NULL,
+  `adb` int(10) NOT NULL,
+  `networking` int(10) NOT NULL,
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+CREATE TABLE `result4` (
+  `id` int(11) NOT NULL,
+  `stu_id` int(10) NOT NULL,
+  `compiler` int(10) NOT NULL,
+  `ai` int(10) NOT NULL,
+  `e_com` int(10) NOT NULL,
+  `project` int(10) NOT NULL,
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
 -- --------------------------------------------------------
 
 --

@@ -24,11 +24,28 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
       <?php $curntPage =  curPageName(); if($curntPage == "index.php") { ?>
-        <li class="treeview active"> <?php
-        } else{?>  <li class="treeview"> <?php }  ?>
-          <a href="./">
-            <i class="fa fa-tachometer"></i> <span>Dash Board</span>
-          </a>
+        <li class="treeview active">
+            <a style="pointer-events: none;">
+                <i class="fa fa-tachometer"></i> <span>Dash Board</span>
+            </a>
+            <?php
+        } else{?>  <li class="treeview">
+              <a href="./">
+                  <i class="fa fa-tachometer"></i> <span>Dash Board</span>
+              </a>
+              <?php }  ?>
+        </li>
+          <?php $curntPage =  curPageName(); if($curntPage == "results.php") { ?>
+        <li class="treeview active">
+            <a style="pointer-events: none;">
+                <i class="fa fa-files-o"></i> <span>Results</span>
+            </a>
+            <?php
+        } else{?>  <li class="treeview">
+              <a href="./results.php">
+                  <i class="fa fa-files-o"></i> <span>Results</span>
+              </a>
+              <?php }  ?>
         </li>
       </ul>
     </section>

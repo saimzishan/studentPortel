@@ -26,7 +26,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
      
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>ISP</b>Studdenst</span>
+      <span class="logo-lg"><b>ISP</b>Student</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -45,7 +45,7 @@
             
               <!-- Menu Footer-->
               <li class="user-footer">         
-                  <a href="../services/logout.php" >Sign out</a>        
+                  <a href="services/logout.php" >Sign out</a>
               </li>
             </ul>
           </li>

@@ -18,7 +18,7 @@ try {
 		header("Location: /studentPortel/");
 	} else {
 		$_SESSION["error"] = " ".mysqli_error($dbc);
-		header("Location: /studentPortel/".mysqli_error($dbc));
+		header("Location: /studentPortel/");
 	}
 }
 //catch exception

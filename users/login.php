@@ -1,10 +1,10 @@
 <?php 
 session_start();
-	 if(isset($_SESSION['name'])) 
+	 if(isset($_SESSION['email']))
 	 {
 	 	header("Location: /studentPortel/users/");
 	 }else {
-	 	unset($_SESSION['name']);
+	 	unset($_SESSION['email']);
 	 	session_destroy();
 	 }
 ?>
@@ -91,6 +91,15 @@ body {
           </div>
       	</div>
     </form>
+      <div id="mesg" style="  color:red; float:right; width:100%;">
+          <?php
+          if(isset($_SESSION['error']))
+          {
+              echo $_SESSION['error'];
+              unset($_SESSION['error']);
+          }
+          ?>
+      </div> <!-- message end   -->
  </div>
 </body>
 </html>
