@@ -23,29 +23,6 @@
               <i class="fa fa-file"></i>
 
               <h3 class="box-title">Students Fee</h3>
-               <div class="col-sm-12">
-                     <!-- Message to save records -->
-                    <div id="mesg" style="  color:#478C61; float:right; width:50%;">
-                       <p> 
-                         <?php  
-                            if(isset($_SESSION['msg'])) 
-                            {
-                              echo $_SESSION['msg'];
-                              unset($_SESSION['msg']);
-                            }
-                          ?>                         
-                        </p>
-                      </div> <!-- message end   -->
-                       <div id="mesg" style="  color:red; float:right; width:50%;">
-                        <?php  
-                          if(isset($_SESSION['error'])) 
-                          {
-                            echo $_SESSION['error'];
-                            unset($_SESSION['error']);
-                          }
-                        ?>
-                      </div> <!-- message end   -->
-                  </div>
             </div>
             <div class="box-body chat" id="chat-box">
               <!-- chat item -->
@@ -321,22 +298,3 @@
   </div>
   <!-- /.content-wrapper -->
   <script src="/studentPortel/assets/plugins/jquery/jquery-2.2.3.min.js"></script>
- <script type="text/javascript">
-function closeMesg() {
-          var a;
-          a = document.getElementById("mesg");
-          setTimeout(function () {
-              a.innerHTML = " ";
-            }, 2000);
-        }
-  $(document).ready(function(){
-    $(document).on("click", ".editBtn", function(){
-      $("#addfee").modal('show');
-      $("#textBox1").val($(this).attr('data-name'));
-      $("#stu_id").val($(this).attr('data-id'));
-      $("#samister_id").val($(this).attr('data-samister'));
-    }); 
-   closeMesg();
-  });
-   
-</script>

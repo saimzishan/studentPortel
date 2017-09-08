@@ -31,7 +31,16 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-
+        <?php
+        if(isset($_SESSION['stu_id']))
+        {
+            $user_id = $_SESSION['stu_id'];
+            $q = "SELECT * FROM students WHERE id = '$user_id' ";
+            $r = mysqli_query($dbc,$q);
+            $row = $r->fetch_array();
+            $name = $row['name'];
+        }
+        ?>
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           
@@ -39,7 +48,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="/studentPortel/assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Admin</span>
+              <span class="hidden-xs"><?php echo $name?></span>
             </a>
             <ul class="dropdown-menu">
             
