@@ -83,11 +83,12 @@
                                     }
                                     else {
                                         ?>
+                                        <h3>Paid Fee Details</h3>
                                         <table class="table table-hover table-bordered">
                                         <thead>
                                         <tr>
-                                            <th>Date</th>
-                                            <th>Fee</th>
+                                            <th>Paid on Date</th>
+                                            <th>Paid Fee</th>
                                         </tr>
                                         </thead>
                                     <?php } ?>
@@ -104,7 +105,7 @@
                                     ?>
                                     </tbody>
                                     <tr>
-                                        <td>Total Fee</td>
+                                        <td>Total Paid Fee</td>
                                         <td><?php echo $temp; ?></td>
                                     </tr>
                                     </table>
@@ -166,7 +167,7 @@
                                     ?>
                                     </tbody>
                                     <tr>
-                                        <td>Total Fee</td>
+                                        <td>Total Paid Fee</td>
                                         <td><?php echo $temp; ?></td>
                                     </tr>
                                     </table>
@@ -228,7 +229,7 @@
                                     ?>
                                     </tbody>
                                     <tr>
-                                        <td>Total Fee</td>
+                                        <td>Total Paid Fee</td>
                                         <td><?php echo $temp; ?></td>
                                     </tr>
                                     </table>
@@ -290,7 +291,7 @@
                                   ?>
                                   </tbody>
                                   <tr>
-                                      <td>Total Fee</td>
+                                      <td>Total Paid Fee</td>
                                       <td><?php echo $temp; ?></td>
                                   </tr>
                                   </table>
