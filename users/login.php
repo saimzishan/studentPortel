@@ -5,7 +5,6 @@ session_start();
 	 	header("Location: /studentPortel/users/");
 	 }else {
 	 	unset($_SESSION['email']);
-	 	session_destroy();
 	 }
 ?>
 

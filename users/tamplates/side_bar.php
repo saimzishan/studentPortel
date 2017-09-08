@@ -47,6 +47,18 @@
               </a>
               <?php }  ?>
         </li>
+          <?php $curntPage =  curPageName(); if($curntPage == "fee.php") { ?>
+        <li class="treeview active">
+            <a style="pointer-events: none;">
+                <i class="fa fa-file"></i> <span>Fee</span>
+            </a>
+            <?php
+        } else{?>  <li class="treeview">
+              <a href="./fee.php">
+                  <i class="fa fa-files-o"></i> <span>Fee</span>
+              </a>
+              <?php }  ?>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

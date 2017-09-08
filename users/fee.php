@@ -19,7 +19,7 @@ if(!isset($_SESSION['email']))
 <?php include('tamplates/header.php'); ?>
 
 
-<?php include('results/index.php'); ?>
+<?php include('fee/index.php'); ?>
 
 
 <?php include('tamplates/end.php'); ?>
