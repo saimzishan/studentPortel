@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41e6440d-7017-45ec-8f5e-bfaba89d5686" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subjects/index.php" afterPath="$PROJECT_DIR$/subjects/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/fee/index.php" afterPath="$PROJECT_DIR$/users/fee/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/end.php" afterPath="$PROJECT_DIR$/end.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users/tamplates/end.php" afterPath="$PROJECT_DIR$/users/tamplates/end.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,48 +17,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/subjects/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="257" column="84" lean-forward="false" selection-start-line="257" selection-start-column="84" selection-end-line="257" selection-end-column="84" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#2823#3610#0#PHP" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="e#6881#7668#0#PHP" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="e#10942#11729#0#PHP" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="e#15000#15787#0#PHP" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#div#1;n#div#3;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="e#18902#18909#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#23634#23641#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <marker date="1504878755546" expanded="true" signature="2679:2723" ph="SELECT * FRO... subjects" />
-                <marker date="1504878755546" expanded="true" signature="4265:4316" ph="SELECT * FRO... teachers" />
-                <marker date="1504878755546" expanded="true" signature="6737:6781" ph="SELECT * FRO... subjects" />
-                <marker date="1504878755546" expanded="true" signature="8323:8374" ph="SELECT * FRO... teachers" />
-                <marker date="1504878755546" expanded="true" signature="10798:10842" ph="SELECT * FRO... subjects" />
-                <marker date="1504878755546" expanded="true" signature="12384:12435" ph="SELECT * FRO... teachers" />
-                <marker date="1504878755546" expanded="true" signature="14856:14900" ph="SELECT * FRO... subjects" />
-                <marker date="1504878755546" expanded="true" signature="16442:16493" ph="SELECT * FRO... teachers" />
-                <marker date="1504878755546" expanded="true" signature="20152:20174" ph="SELECT * FRO... teachers" />
-                <marker date="1504878755546" expanded="true" signature="21434:21456" ph="SELECT * FRO... samester" />
-                <marker date="1504878755546" expanded="true" signature="24991:25013" ph="SELECT * FRO... teachers" />
-                <marker date="1504878755546" expanded="true" signature="26331:26353" ph="SELECT * FRO... samester" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -86,6 +45,8 @@
         <option value="$PROJECT_DIR$/users/tamplates/side_bar.php" />
         <option value="$PROJECT_DIR$/users/fee/index.php" />
         <option value="$PROJECT_DIR$/subjects/index.php" />
+        <option value="$PROJECT_DIR$/end.php" />
+        <option value="$PROJECT_DIR$/users/tamplates/end.php" />
       </list>
     </option>
   </component>
@@ -126,38 +87,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="studentPortel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studentPortel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studentPortel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studentPortel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studentPortel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fee" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -237,18 +166,18 @@
       <option name="presentableId" value="Default" />
       <updated>1504086429170</updated>
       <workItem from="1504086430695" duration="3140000" />
-      <workItem from="1504858615124" duration="16333000" />
+      <workItem from="1504858615124" duration="18228000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19473000" />
+    <option name="totallyTimeSpent" value="21368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25341427" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25341427" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -648,6 +577,22 @@
             <marker date="1504878755546" expanded="true" signature="24991:25013" ph="SELECT * FRO... teachers" />
             <marker date="1504878755546" expanded="true" signature="26331:26353" ph="SELECT * FRO... samester" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/tamplates/end.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="66" lean-forward="false" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/end.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
