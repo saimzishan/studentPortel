@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2017 at 11:43 AM
+-- Generation Time: Sep 11, 2017 at 07:36 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -84,6 +84,11 @@ INSERT INTO `result1` (`id`, `stu_id`, `algorithem`, `c`, `discrete`, `foc`, `en
 (1, 1, 78, 69, 67, 56, 70, 76, '2017-09-07 07:00:00', NULL),
 (2, 3, 65, 67, 76, 56, 56, 67, '2017-09-07 07:00:00', NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `result2`
+--
 
 CREATE TABLE `result2` (
   `id` int(11) NOT NULL,
@@ -98,6 +103,12 @@ CREATE TABLE `result2` (
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `result3`
+--
+
 CREATE TABLE `result3` (
   `id` int(11) NOT NULL,
   `stu_id` int(10) NOT NULL,
@@ -109,6 +120,12 @@ CREATE TABLE `result3` (
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `result4`
+--
 
 CREATE TABLE `result4` (
   `id` int(11) NOT NULL,
@@ -278,10 +295,18 @@ CREATE TABLE `users` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stu_id` int(10) NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `stu_id`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Zeeshan yousaf', 'waqar@gmail.com', 'zeeshan', 1, NULL, '2017-09-08 07:00:00', '2017-09-08 07:00:00');
 
 --
 -- Indexes for dumped tables
@@ -403,7 +428,7 @@ ALTER TABLE `teachers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

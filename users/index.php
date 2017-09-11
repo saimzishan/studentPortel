@@ -5,8 +5,9 @@
 	 {
 	 	header("Location: login.php");
 	 }
+    require_once("services/config.php");
 
-	 ?>
+    ?>
 <!DOCTYPE html>
 <html>
 <head>
